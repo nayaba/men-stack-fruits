@@ -30,6 +30,13 @@ app.post('/fruits', async (req, res) => {
   res.redirect('/fruits/new');
 });
 
+app.get('/fruits', async (req, res) => {
+  const foundFruits = await Fruit.find();
+  res.render('fruits/index.ejs', {
+    fruits: foundFruits,
+  });
+});
+
 app.listen(3000, () => {
   console.log('The express app is ready!');
 });
