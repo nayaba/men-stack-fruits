@@ -12,6 +12,8 @@ mongoose.connection.on('connected', () => {
 
 const Fruit = require('./models/fruit.js');
 
+app.use(express.urlencoded({extended: false}));
+
 app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
