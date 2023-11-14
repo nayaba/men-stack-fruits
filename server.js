@@ -39,6 +39,13 @@ app.get('/fruits', async (req, res) => {
   });
 });
 
+app.get('/fruits/:fruitId', async (req, res) => {
+  const foundFruit = await Fruit.findById(req.params.fruitId);
+  res.render('fruits/show.ejs', {
+    fruit: foundFruit,
+  });
+});
+
 app.listen(3000, () => {
   console.log('The express app is ready!');
 });
