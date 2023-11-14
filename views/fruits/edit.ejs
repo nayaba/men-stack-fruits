@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Edit the <%= fruit.name %></h1>
-  <form>
+  <form action="/fruits/<%=fruit._id%>?_method=PUT" method="POST">
     <label>
       Name:
       <input type="text" name="name" value="<%= fruit.name %>">
