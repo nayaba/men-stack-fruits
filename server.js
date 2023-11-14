@@ -20,6 +20,16 @@ app.get('/fruits/new', (req, res) => {
   res.render('fruits/new.ejs');
 });
 
+app.post('/fruits', async (req, res) => {
+  if (req.body.isReadyToEat === 'on') {
+    req.body.isReadyToEat = true;
+  } else {
+    req.body.isReadyToEat = false;
+  }
+  await Fruit.create(req.body);
+  res.redirect('/fruits/new');
+});
+
 app.listen(3000, () => {
   console.log('The express app is ready!');
 });
