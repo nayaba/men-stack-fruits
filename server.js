@@ -16,6 +16,10 @@ app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
+app.get('/fruits/new', (req, res)=>{
+  res.render('fruits/new.ejs');
+});
+
 app.listen(3000, () => {
   console.log('The express app is ready!');
 });
