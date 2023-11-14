@@ -53,6 +53,13 @@ app.delete('/fruits/:fruitId', async (req, res) => {
   res.redirect('/fruits');
 });
 
+app.get('/fruits/:fruitId/edit', async (req, res) => {
+  const foundFruit = await Fruit.findById(req.params.fruitId);
+  res.render('fruits/edit.ejs', {
+    fruit: foundFruit,
+  });
+});
+
 app.listen(3000, () => {
   console.log('The express app is ready!');
 });
