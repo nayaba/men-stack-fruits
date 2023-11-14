@@ -10,13 +10,13 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-const Fruit = require('./models/fruit.js')
+const Fruit = require('./models/fruit.js');
 
 app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
-app.get('/fruits/new', (req, res)=>{
+app.get('/fruits/new', (req, res) => {
   res.render('fruits/new.ejs');
 });
 
