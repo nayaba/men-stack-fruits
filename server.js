@@ -3,6 +3,7 @@ dotenv.config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -13,6 +14,7 @@ mongoose.connection.on('connected', () => {
 const Fruit = require('./models/fruit.js');
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 
 app.get('/', async (req, res) => {
   res.render('index.ejs');
@@ -44,6 +46,11 @@ app.get('/fruits/:fruitId', async (req, res) => {
   res.render('fruits/show.ejs', {
     fruit: foundFruit,
   });
+});
+
+app.delete('/fruits/:fruitId', async (req, res) => {
+  await Fruit.findByIdAndDelete(req.params.fruitId);
+  res.redirect('/fruits');
 });
 
 app.listen(3000, () => {
