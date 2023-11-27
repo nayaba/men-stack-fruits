@@ -8,14 +8,10 @@
 <body>
   <h1>Create a New Fruit!</h1>
   <form action="/fruits" method="POST">
-    <label>
-      Name:
-      <input type="text" name="name">
-    </label>
-    <label>
-      Ready to Eat?
-      <input type="checkbox" name="isReadyToEat">
-    </label>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <label for="ready-to-eat">Ready to Eat?</label>
+    <input type="checkbox" name="isReadyToEat" id="ready-to-eat">
     <button type="submit">Add fruit</button>
   </form>
   <a href="/fruits">Back to fruits index</a>
