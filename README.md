@@ -1,4 +1,4 @@
-# ![Building a CRUD App with Mongoose, Express, and EJS - Fruits Solution](./internal-resources/assets/tktk-hero.png)
+# ![MEN Stack CRUD App - Fruits Solution](./internal-resources/assets/hero.png)
 
 ## About
 
