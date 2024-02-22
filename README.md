@@ -2,7 +2,9 @@
 
 ## About
 
-This is a single model CRUD application utilizing Mongoose, Express, and EJS.
+This is a completed version of the MEN Stack CRUD App - Fruits module.
+
+Note: The styled version can be found on the `CSS` branch.
 
 After cloning this, be sure to run `npm i`. Also touch a `.env` file, and add a `MONGODB_URI` key with a connection string value you provide. Launch the app with `nodemon`!
 
